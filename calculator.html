@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Calculator</title>
+		<style>
+			.mainContainer {
+				border-color: black;
+				border-radius: 1rem;
+				border: solid;
+				width: fit-content;
+				padding: 1rem;
+				position: absolute;
+				left: 40rem;
+				top: 10rem;
+				display: none;
+			}
+			button {
+				color: rgb(165, 4, 4);
+				width: 6rem;
+				height: 6rem;
+				border: solid;
+				border-radius: 1rem;
+				border-color: rgb(1, 53, 53);
+				font-weight: bold;
+				font-style: italic;
+				font-size: 1rem;
+			}
+			button:hover {
+				background-color: darkslategray;
+			}
+			#clear {
+				width: 24.9rem;
+				position: relative;
+				top: 0.5rem;
+			}
+			input {
+				height: 3rem;
+				width: 24.2rem;
+				border-radius: 1rem;
+				border: solid;
+				font-style: italic;
+				font-weight: bold;
+				font-size: 1rem;
+			}
+			#calc {
+				text-align: center;
+				padding-right: 11rem;
+				color: rgb(70, 21, 3);
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$("#calc").click(function () {
+					$(".mainContainer").slideDown(4000);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1 id="calc">Calculator</h1>
+		<div class="mainContainer">
+			<form name="form1">
+				<input type="text" name="display" /> <br />
+				<br />
+				<button type="button" value="1" onclick="form1.display.value += '1' ">1</button>
+				<button type="button" value="2" onclick="form1.display.value += '2' ">2</button>
+				<button type="button" value="3" onclick="form1.display.value += '3' ">3</button>
+				<button type="button" value="+" onclick="form1.display.value += '+' ">+</button>
+				<br />
+				<br />
+
+				<button type="button" value="4" onclick="form1.display.value += '4' ">4</button>
+				<button type="button" value="5" onclick="form1.display.value += '5' ">5</button>
+				<button type="button" value="6" onclick="form1.display.value += '6' ">6</button>
+				<button type="button" value="-" onclick="form1.display.value += '-' ">-</button>
+				<br />
+				<br />
+
+				<button type="button" value="7" onclick="form1.display.value += '7' ">7</button>
+				<button type="button" value="8" onclick="form1.display.value += '8' ">8</button>
+				<button type="button" value="9" onclick="form1.display.value += '9' ">9</button>
+				<button type="button" value="*" onclick="form1.display.value += '*' ">*</button>
+				<br />
+				<br />
+
+				<button type="button" value="/" onclick="form1.display.value += '/' ">/</button>
+				<button type="button" value="0" onclick="form1.display.value += '0' ">0</button>
+				<button type="button" value="." onclick="form1.display.value += '.' ">.</button>
+				<button type="button" value="=" onclick="form1.display.value = eval(form1.display.value) ">=</button>
+				<br />
+				<button type="button" value="Clear All" onclick="form1.display.value = ' ' " id="clear">All Clear</button>
+				<br />
+			</form>
+		</div>
+	</body>
+</html>
